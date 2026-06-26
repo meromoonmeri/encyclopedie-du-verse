@@ -1,0 +1,521 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Encyclopédie du Verse - Wiki des Techniques Mystiques</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700;900&family=Crimson+Text:ital@0;1&family=EB+Garamond:wght@400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- PARTICULES EN ARRIÈRE-PLAN -->
+    <div id="particles"></div>
+    
+    <div class="page-wrapper">
+        <!-- BARRE DE NAVIGATION -->
+        <nav class="navbar">
+            <div class="navbar-content">
+                <div class="logo-section">
+                    <div class="logo-icon">📖</div>
+                    <div class="logo-text">
+                        <h1>Encyclopédie du Verse</h1>
+                        <p class="tagline">Recueil des Arts et Techniques Mystiques</p>
+                    </div>
+                </div>
+                <ul class="nav-links">
+                    <li><a href="#" onclick="showHome()" class="nav-link active">Accueil</a></li>
+                    <li><a href="#" onclick="showIndex()" class="nav-link">Index</a></li>
+                    <li><a href="#" onclick="showBranches()" class="nav-link">Les 7 Arts</a></li>
+                    <li><a href="#" onclick="showSearch()" class="nav-link">Grimoire</a></li>
+                </ul>
+            </div>
+        </nav>
+
+        <!-- CONTENU PRINCIPAL -->
+        <main id="main-content">
+            <!-- PAGE D'ACCUEIL - COUVERTURE DU GRIMOIRE -->
+            <section id="home" class="page active">
+                <div class="home-ornament ornament-top">
+                    <div class="ornament-line"></div>
+                    <div class="ornament-symbol">✦</div>
+                    <div class="ornament-line"></div>
+                </div>
+
+                <div class="hero-section">
+                    <div class="hero-content">
+                        <h2 class="hero-title">Bienvenue au Grimoire Sacré</h2>
+                        <p class="hero-subtitle">L'Encyclopédie Vivante du Verse</p>
+                        <div class="hero-divider"></div>
+                        <p class="hero-description">
+                            Explorez les <span class="highlight">1400 techniques</span> de transformation du Verse,<br>
+                            réparties entre <span class="highlight">7 arts majeurs</span> et leurs mystères profonds.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="universe-section">
+                    <div class="section-ornament">
+                        <div class="ornament-corner ornament-tl">✦</div>
+                        <div class="ornament-corner ornament-tr">✦</div>
+                    </div>
+                    
+                    <h3 class="section-title">L'Énergie Primordiale</h3>
+                    <p class="section-text">
+                        Chaque être vivant possède une réserve d'énergie potentielle appelée <strong>le Verse</strong>.
+                        Cette force primordiale coule dans les veines de tous les êtres conscients. 
+                        Une technique consiste à transformer, canaliser et diriger cette énergie afin de produire un effet tangible.
+                    </p>
+                    <p class="section-text">
+                        Cette encyclopédie recense les <strong>1400 techniques connues</strong>, 
+                        créées par les grands maîtres à travers les âges.
+                    </p>
+                    
+                    <div class="section-ornament">
+                        <div class="ornament-corner ornament-bl">✦</div>
+                        <div class="ornament-corner ornament-br">✦</div>
+                    </div>
+                </div>
+
+                <div class="arts-showcase">
+                    <h3 class="section-title">Les Sept Écoles Majeures</h3>
+                    <div class="arts-grid">
+                        <div class="art-card art-elementaire" onclick="showBranch('elementaire')">
+                            <div class="art-header">
+                                <div class="art-symbol">🔥</div>
+                                <h4>Art Élémentaire</h4>
+                            </div>
+                            <p class="art-description">Manipulation des éléments primaires</p>
+                            <div class="art-methods">
+                                <span class="method">Feu</span>
+                                <span class="method">Eau</span>
+                                <span class="method">Terre</span>
+                                <span class="method">Air</span>
+                            </div>
+                            <div class="art-footer">
+                                <span class="technique-count">200 techniques</span>
+                            </div>
+                        </div>
+
+                        <div class="art-card art-combat" onclick="showBranch('combat')">
+                            <div class="art-header">
+                                <div class="art-symbol">⚔️</div>
+                                <h4>Art Combat</h4>
+                            </div>
+                            <p class="art-description">Impulsion physique et martial</p>
+                            <div class="art-methods">
+                                <span class="method">Force</span>
+                                <span class="method">Vitesse</span>
+                                <span class="method">Impact</span>
+                                <span class="method">Flux</span>
+                            </div>
+                            <div class="art-footer">
+                                <span class="technique-count">200 techniques</span>
+                            </div>
+                        </div>
+
+                        <div class="art-card art-interdit" onclick="showBranch('interdit')">
+                            <div class="art-header">
+                                <div class="art-symbol">💀</div>
+                                <h4>Art Interdit</h4>
+                            </div>
+                            <p class="art-description">Corruption et transformation du Verse</p>
+                            <div class="art-methods">
+                                <span class="method">Mutation</span>
+                                <span class="method">Chaos</span>
+                                <span class="method">Dégénérance</span>
+                                <span class="method">Abomination</span>
+                            </div>
+                            <div class="art-footer">
+                                <span class="technique-count">200 techniques</span>
+                            </div>
+                        </div>
+
+                        <div class="art-card art-runique" onclick="showBranch('runique')">
+                            <div class="art-header">
+                                <div class="art-symbol">✨</div>
+                                <h4>Art Runique</h4>
+                            </div>
+                            <p class="art-description">Magie des anciens symboles</p>
+                            <div class="art-methods">
+                                <span class="method">Runes</span>
+                                <span class="method">Glyphes</span>
+                                <span class="method">Sceaux</span>
+                                <span class="method">Ésotérisme</span>
+                            </div>
+                            <div class="art-footer">
+                                <span class="technique-count">200 techniques</span>
+                            </div>
+                        </div>
+
+                        <div class="art-card art-invisible" onclick="showBranch('invisible')">
+                            <div class="art-header">
+                                <div class="art-symbol">👻</div>
+                                <h4>Art Invisible</h4>
+                            </div>
+                            <p class="art-description">Dissimulation et altération sensorielle</p>
+                            <div class="art-methods">
+                                <span class="method">Ombre</span>
+                                <span class="method">Illusion</span>
+                                <span class="method">Invisibilité</span>
+                                <span class="method">Brouillard</span>
+                            </div>
+                            <div class="art-footer">
+                                <span class="technique-count">200 techniques</span>
+                            </div>
+                        </div>
+
+                        <div class="art-card art-foi" onclick="showBranch('foi')">
+                            <div class="art-header">
+                                <div class="art-symbol">✝️</div>
+                                <h4>Art de la Foi</h4>
+                            </div>
+                            <p class="art-description">Croyance divine et prière</p>
+                            <div class="art-methods">
+                                <span class="method">Bénédiction</span>
+                                <span class="method">Grâce</span>
+                                <span class="method">Sainteté</span>
+                                <span class="method">Protection</span>
+                            </div>
+                            <div class="art-footer">
+                                <span class="technique-count">200 techniques</span>
+                            </div>
+                        </div>
+
+                        <div class="art-card art-defendu" onclick="showBranch('defendu')">
+                            <div class="art-header">
+                                <div class="art-symbol">⛔</div>
+                                <h4>Art Défendu</h4>
+                            </div>
+                            <p class="art-description">Techniques prohibées et maudites</p>
+                            <div class="art-methods">
+                                <span class="method">Péché</span>
+                                <span class="method">Sacrifice</span>
+                                <span class="method">Malédiction</span>
+                                <span class="method">Interdiction</span>
+                            </div>
+                            <div class="art-footer">
+                                <span class="technique-count">200 techniques</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="stats-section">
+                    <h3 class="section-title">Statistiques du Grimoire</h3>
+                    <div class="stats-grid">
+                        <div class="stat-card">
+                            <span class="stat-number">1400</span>
+                            <span class="stat-label">Techniques Cataloguées</span>
+                            <div class="stat-bar"></div>
+                        </div>
+                        <div class="stat-card">
+                            <span class="stat-number">7</span>
+                            <span class="stat-label">Arts Majeurs</span>
+                            <div class="stat-bar"></div>
+                        </div>
+                        <div class="stat-card">
+                            <span class="stat-number">8</span>
+                            <span class="stat-label">Rangs de Puissance</span>
+                            <div class="stat-bar"></div>
+                        </div>
+                        <div class="stat-card">
+                            <span class="stat-number">9</span>
+                            <span class="stat-label">Classifications</span>
+                            <div class="stat-bar"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="footer-ornament ornament-bottom">
+                    <div class="ornament-line"></div>
+                    <div class="ornament-symbol">✦</div>
+                    <div class="ornament-line"></div>
+                </div>
+            </section>
+
+            <!-- PAGE BRANCHE -->
+            <section id="branch" class="page">
+                <button class="back-btn" onclick="showHome()">← Retour au Grimoire</button>
+                
+                <div class="branch-header" id="branch-header">
+                    <div class="branch-ornament">
+                        <div class="ornament-line"></div>
+                        <div class="ornament-symbol">✦</div>
+                        <div class="ornament-line"></div>
+                    </div>
+                    <h2 id="branch-title" class="branch-title">Art Élémentaire</h2>
+                    <p id="branch-description" class="branch-description">Manipulation des éléments primaires</p>
+                    <div class="branch-ornament">
+                        <div class="ornament-line"></div>
+                        <div class="ornament-symbol">✦</div>
+                        <div class="ornament-line"></div>
+                    </div>
+                </div>
+
+                <div class="branch-intro" id="branch-intro"></div>
+
+                <div class="branch-actions">
+                    <button class="download-btn" onclick="downloadBranchDocx()">📥 Télécharger la branche complète (.docx)</button>
+                    <button class="download-btn alternate" onclick="downloadBranchPdf()">📄 Voir l'aperçu</button>
+                </div>
+
+                <div class="techniques-container">
+                    <table class="techniques-table">
+                        <thead>
+                            <tr>
+                                <th>N°</th>
+                                <th>Technique</th>
+                                <th>Nom Japonais</th>
+                                <th>Classification</th>
+                                <th>Rang</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody id="branch-body"></tbody>
+                    </table>
+                </div>
+            </section>
+
+            <!-- PAGE TECHNIQUE DÉTAILLÉE -->
+            <section id="technique-detail" class="page">
+                <button class="back-btn" onclick="showBranch(currentBranch)">← Retour à la branche</button>
+                
+                <div class="technique-book-wrapper" id="technique-book">
+                    <!-- PAGE GAUCHE -->
+                    <div class="technique-page left-page">
+                        <div class="page-header">
+                            <span class="page-number">MODE D'EMPLOI</span>
+                            <div class="page-divider"></div>
+                            <span class="page-title">COMPÉTENCE</span>
+                        </div>
+
+                        <div class="technique-number">
+                            <h4>FICHE DE TECHNIQUE N°</h4>
+                            <h2 id="technique-number-display">001</h2>
+                        </div>
+
+                        <div class="technique-illustration-zone">
+                            <p class="placeholder-text">[ Illustration de la Technique ]</p>
+                        </div>
+                    </div>
+
+                    <!-- PAGE DROITE -->
+                    <div class="technique-page right-page">
+                        <div class="technique-title-section">
+                            <h3 id="technique-japanese" class="japanese-title">瞬歩</h3>
+                            <h1 id="technique-name" class="technique-main-title">FlashStep</h1>
+                            <p id="technique-subtitle" class="technique-subtitle">« Pas volant »</p>
+                            <div class="title-separator"></div>
+                        </div>
+
+                        <div class="technique-columns">
+                            <div class="technique-left-col">
+                                <div class="technique-section">
+                                    <h4 class="section-header">VUE D'ENSEMBLE</h4>
+                                    <p id="technique-overview" class="section-content"></p>
+                                </div>
+
+                                <div class="technique-section">
+                                    <h4 class="section-header">EFFET</h4>
+                                    <ul id="technique-effects" class="section-list"></ul>
+                                </div>
+
+                                <div class="technique-section">
+                                    <h4 class="section-header">FONCTIONNEMENT</h4>
+                                    <ol id="technique-functioning" class="section-list"></ol>
+                                </div>
+
+                                <div class="technique-section">
+                                    <h4 class="section-header">FAIBLESSES</h4>
+                                    <ul id="technique-weaknesses" class="section-list"></ul>
+                                </div>
+                            </div>
+
+                            <div class="technique-right-col">
+                                <div class="data-block">
+                                    <h4 class="block-header">DONNÉES GÉNÉRALES</h4>
+                                    <table class="data-table">
+                                        <tr>
+                                            <td class="data-label">Nom</td>
+                                            <td id="data-name" class="data-value"></td>
+                                        </tr>
+                                        <tr>
+                                            <td class="data-label">Classification</td>
+                                            <td id="data-classification" class="data-value"></td>
+                                        </tr>
+                                        <tr>
+                                            <td class="data-label">Nature</td>
+                                            <td id="data-nature" class="data-value"></td>
+                                        </tr>
+                                        <tr>
+                                            <td class="data-label">Vecteur</td>
+                                            <td id="data-vector" class="data-value"></td>
+                                        </tr>
+                                        <tr>
+                                            <td class="data-label">Portée</td>
+                                            <td id="data-range" class="data-value"></td>
+                                        </tr>
+                                    </table>
+                                </div>
+
+                                <div class="data-block">
+                                    <h4 class="block-header">LIENS</h4>
+                                    <table class="data-table">
+                                        <tr>
+                                            <td class="data-label">Branche</td>
+                                            <td id="link-branch" class="data-value"></td>
+                                        </tr>
+                                        <tr>
+                                            <td class="data-label">Précédente</td>
+                                            <td><a id="link-previous" href="#" class="technique-link">-</a></td>
+                                        </tr>
+                                        <tr>
+                                            <td class="data-label">Suivante</td>
+                                            <td><a id="link-next" href="#" class="technique-link">-</a></td>
+                                        </tr>
+                                        <tr>
+                                            <td class="data-label">Parente</td>
+                                            <td><a id="link-parent" href="#" class="technique-link">-</a></td>
+                                        </tr>
+                                        <tr>
+                                            <td class="data-label">Dérivées</td>
+                                            <td id="link-derived" class="data-value"></td>
+                                        </tr>
+                                    </table>
+                                </div>
+
+                                <div class="data-block">
+                                    <h4 class="block-header">PROGRESSION</h4>
+                                    <table class="rank-table">
+                                        <tr>
+                                            <td>F</td><td>E</td><td>D</td><td>C</td>
+                                        </tr>
+                                        <tr>
+                                            <td>B</td><td>A</td><td>S</td><td>S+</td>
+                                        </tr>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="page-footer">
+                            <div class="footer-decoration"></div>
+                            <span class="page-number" id="technique-page-number">Page 1</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="technique-actions">
+                    <button class="download-btn" onclick="downloadTechniqueDocx()">📥 Télécharger cette fiche (.docx)</button>
+                </div>
+            </section>
+
+            <!-- PAGE INDEX -->
+            <section id="index" class="page">
+                <button class="back-btn" onclick="showHome()">← Retour</button>
+                
+                <div class="section-header-box">
+                    <h2>Index Complet du Grimoire</h2>
+                    <p>1400 techniques cataloguées</p>
+                </div>
+
+                <div class="index-controls">
+                    <input type="text" id="index-search-input" placeholder="🔍 Rechercher une technique..." onkeyup="filterIndex()">
+                    <select id="index-sort" onchange="sortIndex()">
+                        <option value="number">Numéro</option>
+                        <option value="name">Nom (A-Z)</option>
+                        <option value="branch">Art</option>
+                        <option value="rank">Rang</option>
+                    </select>
+                </div>
+
+                <div class="index-container">
+                    <table class="index-table">
+                        <thead>
+                            <tr>
+                                <th>N°</th>
+                                <th>Technique</th>
+                                <th>Art</th>
+                                <th>Classification</th>
+                                <th>Rang</th>
+                            </tr>
+                        </thead>
+                        <tbody id="index-body"></tbody>
+                    </table>
+                </div>
+            </section>
+
+            <!-- PAGE RECHERCHE AVANCÉE -->
+            <section id="search" class="page">
+                <button class="back-btn" onclick="showHome()">← Retour</button>
+                
+                <div class="section-header-box">
+                    <h2>Grimoire de Recherche Avancée</h2>
+                    <p>Filtrez les techniques selon vos critères</p>
+                </div>
+
+                <div class="search-container">
+                    <div class="search-form">
+                        <div class="form-group">
+                            <label>Nom de la technique</label>
+                            <input type="text" id="search-name" placeholder="Ex: FlashStep, Inferno...">
+                        </div>
+
+                        <div class="form-group">
+                            <label>Art Majeur</label>
+                            <select id="search-branch">
+                                <option value="">Tous les arts</option>
+                                <option value="elementaire">Art Élémentaire</option>
+                                <option value="combat">Art Combat</option>
+                                <option value="interdit">Art Interdit</option>
+                                <option value="runique">Art Runique</option>
+                                <option value="invisible">Art Invisible</option>
+                                <option value="foi">Art de la Foi</option>
+                                <option value="defendu">Art Défendu</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label>Classification</label>
+                            <select id="search-classification">
+                                <option value="">Toutes les classifications</option>
+                                <option value="Offensive">Offensive</option>
+                                <option value="Défensive">Défensive</option>
+                                <option value="Soutien">Soutien</option>
+                                <option value="Mobilité">Mobilité</option>
+                                <option value="Invocation">Invocation</option>
+                                <option value="Renforcement">Renforcement</option>
+                                <option value="Soin">Soin</option>
+                                <option value="Contrôle">Contrôle</option>
+                                <option value="Hybridation">Hybridation</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label>Rang de Puissance</label>
+                            <select id="search-rank">
+                                <option value="">Tous les rangs</option>
+                                <option value="F">F</option>
+                                <option value="E">E</option>
+                                <option value="D">D</option>
+                                <option value="C">C</option>
+                                <option value="B">B</option>
+                                <option value="A">A</option>
+                                <option value="S">S</option>
+                                <option value="S+">S+</option>
+                            </select>
+                        </div>
+
+                        <button class="search-btn" onclick="performSearch()">🔍 Rechercher dans le Grimoire</button>
+                    </div>
+
+                    <div id="search-results" class="search-results"></div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <script src="data.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>
